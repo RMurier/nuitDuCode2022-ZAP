@@ -156,11 +156,11 @@ class Player(object):
             if not self.hitByCar:
                 if (pyxel.btn(pyxel.KEY_LEFT) or pyxel.btn(pyxel.KEY_Q)) and self.x > -2:
                     self.x -= 1
-                elif (pyxel.btn(pyxel.KEY_RIGHT) or pyxel.btn(pyxel.KEY_D)) and self.x < 115:
+                if (pyxel.btn(pyxel.KEY_RIGHT) or pyxel.btn(pyxel.KEY_D)) and self.x < 115:
                     self.x += 1
-                elif (pyxel.btn(pyxel.KEY_UP) or pyxel.btn(pyxel.KEY_Z)) and self.y > -1:
+                if (pyxel.btn(pyxel.KEY_UP) or pyxel.btn(pyxel.KEY_Z)) and self.y > -1:
                     self.y -= 1
-                elif (pyxel.btn(pyxel.KEY_DOWN) or pyxel.btn(pyxel.KEY_S)) and self.y < 118:
+                if (pyxel.btn(pyxel.KEY_DOWN) or pyxel.btn(pyxel.KEY_S)) and self.y < 118:
                     self.y += 1
             else: 
                 time = float(datetime.datetime.timestamp(datetime.datetime.utcnow()))
