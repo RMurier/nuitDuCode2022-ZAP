@@ -70,21 +70,21 @@ class Game(object):
         if random.randint(0, self.lvl) < 10 and pyxel.frame_count - self.lastVehSpawn[rand] > 60:
             self.lastVehSpawn[rand] = pyxel.frame_count
             if rand == 0:
-                newY = 10 
+                newY = 9
                 arg = True
             elif rand == 1:
-                newY = 29
+                newY = 31
                 arg = False
             elif rand == 2:
-                newY = 75
+                newY = 73
                 arg = True
             else:
-                newY = 94
+                newY = 95
                 arg = False
             self.lstvehicules.append(Vehicle(newY, arg))
             
         if self.player.y < 9:
-            self.player.resetCoords()
+            self.player.resetCoords(True)
             self.lvl -= 15
             self.levelLabel += 1
 

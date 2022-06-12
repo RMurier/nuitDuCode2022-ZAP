@@ -12,7 +12,7 @@ class Player(object):
         """
         self.x = 60
         self.y = 115
-        self.lives = 3
+        self.lives = 999
         self.wait = 180
         #Hit logic 
         self.hitByCar = False
@@ -33,11 +33,12 @@ class Player(object):
         self.hitByCar = False
         self.GetSetLives(False) 
 
-    def resetCoords(self):
+    def resetCoords(self, win=False):
         """
         Méthode pour réinitialiser les coordonnées du joueur.
         """
-        self.wait = pyxel.frame_count + 30
+        if win:
+            self.wait = pyxel.frame_count + 60
         self.x = 60
         self.y = 115
 
@@ -98,8 +99,12 @@ class Player(object):
         """
         if not self.hitByCar:
             for veh in vehicule:
-                if (self.x + 12 >= veh.x and self.x <= veh.x + 4) and (self.y+8 >= veh.y and self.y <= veh.y + 8):
-                    self.driveBy(veh)
+                if veh.isLeft:
+                    if (self.x + self.width >= veh.x and self.x <= veh.x + veh.width) and (self.y + self.height >= veh.y and self.y <= veh.y + veh.height):
+                        self.driveBy(veh)
+                else:
+                    if (self.x + self.width >= veh.x and self.x <= veh.x + veh.width) and (self.y + self.height >= veh.y and self.y <= veh.y + veh.height):
+                        self.driveBy(veh)
             
     def update(self, vehicules):
         """
