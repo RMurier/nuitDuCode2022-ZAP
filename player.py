@@ -12,8 +12,9 @@ class Player(object):
         """
         self.x = 60
         self.y = 115
-        self.lives = 999
+        self.lives = 3
         self.wait = 180
+        
         #Hit logic 
         self.hitByCar = False
         self.hitLeft = False
