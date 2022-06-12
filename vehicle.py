@@ -56,7 +56,5 @@ class Vehicle(object):
         """
         if self.isLeft:
             pyxel.blt(self.x, self.y, 0, 2, 88, self.width, self.height, 0)
-            pyxel.rect(self.x, self.y, self.width, self.height, 12)
         else:
             pyxel.blt(self.x, self.y, 0, 2, 88, -self.width, self.height, 0)
-            pyxel.rect(self.x, self.y, self.width, self.height, 12)
